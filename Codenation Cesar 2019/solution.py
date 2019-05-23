@@ -1,4 +1,4 @@
-import urllib.request, json, string, hashlib, base64
+import urllib.request, json, string, hashlib, base64, requests, binascii
 
 
 def download_json():
@@ -9,7 +9,11 @@ def download_json():
 			json.dump(data,json_file)
 
 def submit_answer():
-	pass
+	url = 'https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=138ded668441ab05ede31d4c672fe5128de3840f'
+	with open('answer.json') as json_file:
+		multipart_data = {'answer':('answer.json',json_file)}
+		response = requests.post(url, files=multipart_data)
+		print(response.status_code)
 
 def decript(casas, encripted):
 	alphabet = list(string.ascii_lowercase)
@@ -30,7 +34,7 @@ def generate_hash():
 		data = json.load(json_file)
 		m = hashlib.sha1()
 		m.update(str.encode(data['decifrado']))
-		data['resumo_criptografico'] = base64.b64encode(m.digest()).decode('ascii')
+		data['resumo_criptografico'] = binascii.hexlify(m.digest()).decode('ascii')
 	with open('answer.json','w') as json_file:
 		json.dump(data,json_file)
 
@@ -45,3 +49,4 @@ def decript_file():
 download_json()
 decript_file()
 generate_hash()
+submit_answer()
