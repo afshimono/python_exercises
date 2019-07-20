@@ -1,0 +1,17 @@
+============================= test session starts =============================
+platform win32 -- Python 3.6.0, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- C:\Python36_32\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ashim\codenation\ranking-sellers-python
+collecting ... collected 8 items
+
+test_submit.py::SellersRankingTests::test_best_seller PASSED             [ 12%]
+test_submit.py::SellersRankingTests::test_best_seller_store PASSED       [ 25%]
+test_submit.py::SellersRankingTests::test_best_seller_store_two PASSED   [ 37%]
+test_submit.py::SellersRankingTests::test_best_seller_three PASSED       [ 50%]
+test_submit.py::SellersRankingTests::test_best_seller_two PASSED         [ 62%]
+test_submit.py::SellersRankingTests::test_ranking_list PASSED            [ 75%]
+test_submit.py::SellersRankingTests::test_ranking_list_two PASSED        [ 87%]
+test_submit.py::SellersRankingTests::test_sales_goals PASSED             [100%]
+
+- generated xml file: C:\Users\ashim\codenation\ranking-sellers-python\output.xml -
+========================== 8 passed in 0.13 seconds ===========================
